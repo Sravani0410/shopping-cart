@@ -1,0 +1,69 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { Links } from "@/types/Links";
+import { metaData } from "../data/siteData";
+const fetchLinks = async () => {
+  try {
+    const res = await fetch(
+      "https://shopping-cart-backend-three.vercel.app/api/products"
+    );
+
+    if (!res.ok) {
+      throw new Error("Error fetching links");
+    }
+
+    const data = await res.json();
+    // console.log("hdsagh===>",data)
+    return data;
+  } catch (err) {
+    console.error("Error fetching links:", err);
+    // Show user-friendly error message
+    return []; // Return empty array to avoid rendering errors
+  }
+};
+
+const data = await fetchLinks();
+// console.log(data, "hghhgkk=================");
+
+---
+
+<BaseLayout>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {
+      data && (
+        <div class="md:col-span-1 md:flex md:flex-col md:overflow-auto">
+          <ul class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8 overflow-auto flex-grow">
+            {data.map((link: Links) => (
+              <li class="group bg-white p-4 rounded-lg shadow border border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                <h3 class="mt-4 text-sm text-gray-700">{link.name}</h3>
+                {link.image && (
+                  <img
+                    src={link.image}
+                    alt={link.name}
+                    class="w-20 h-20 rounded"
+                  />
+                )}
+                <p>{link.description}</p>
+                <p>{link.price}</p>
+                <div class="container flex justify-between items-center py-4">
+                  <button class="edit_btn">Edit</button>
+                  {/* <a class="bg-teal-500 text-white py-2 px-6" href={`/edit/${link._id}`}>Edit</a> */}
+                   {/* <a href={`/api/${link._id}.json`}>Delete</a> */}
+                   <a href={`/link/${link._id}`}>Delete</a>
+                   {/* <button type="submit" class="bg-red-400 text-white py-2 px-6" id="delete">Delete Link</button> */}
+                  {/* <button>Delete</button> */}
+                </div>
+                <button>Add to Cart</button>
+
+                {/* <a class="underline text-blue-500" href={`/link/${link._id}`}>
+              View Details
+            </a> */}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>
+

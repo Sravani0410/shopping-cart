@@ -1,0 +1,66 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import type { Links } from "@/types/Links";
+
+const { _id } = Astro.params;
+
+const fetchLink = async () => {
+  try {
+    const res = await fetch(`https://shopping-cart-backend-three.vercel.app/api/products/${_id}`);
+
+    if (!res.ok) {
+      throw new Error("Error fetching link");
+    }
+
+    const data = await res.json();
+    if (!data._id) {
+      return Astro.redirect("/"); // Handle case where link is not found
+    }
+
+    return data;
+  } catch (err) {
+    console.error("Error fetching link:", err);
+    // Show user-friendly error message or redirect
+    return Astro.redirect("/");
+  }
+};
+
+const { data } = await fetchLink();
+
+---
+<BaseLayout>
+  <form id="add-form" class="grid gap-4">
+    <div class="grid">
+      <label for="title">Name</label>
+      <input required type="text" name="name" id="title" value={data.name} />
+    </div>
+    <div class="grid">
+      <label>Description</label>
+      <textarea required name="description" maxlength="160" id="description">
+        {data.description}
+      </textarea>
+    </div>
+    <div class="grid">
+      <label for="price">Price (optional)</label>
+      <input type="number" name="price" id="price" value={data.price || ""} /> </div>
+    <div class="grid">
+      <label for="image">Image URL (optional)</label>
+      <input type="text" name="image" id="image" value={data.image || ""} /> </div>
+    <flex class="gap-6 flex file:flex-wrap">
+      <div class="grid max-w-fit">
+        <button class="bg-blue-500 text-blue-50 px-6 py-2 max-w-fit" type="submit">Update Product</button>
+      </div>
+    </flex>
+  </form>
+</BaseLayout>
+
+<script>
+  const addForm = document.querySelector("#add-form") as HTMLFormElement;
+  addForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(addForm);
+    const values = Object.fromEntries(formData);
+
+  });
+</script>
