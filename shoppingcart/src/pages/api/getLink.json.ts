@@ -9,7 +9,7 @@ export const GET: APIRoute = async ({ params, request }) => {
             ? `https://shopping-cart-backend-three.vercel.app/api/products/${id}`
             : "https://shopping-cart-backend-three.vercel.app/api/products";
 
-        const res = await fetch(`https://shopping-cart-backend-three.vercel.app/api/products`, { method: "GET", headers: { "Content-Type": "application/json" } });
+        const res = await fetch(endpoint, { method: "GET", headers: { "Content-Type": "application/json" } });
 
         if (!res.ok) throw new Error("There was a problem with the DB connection");
 
