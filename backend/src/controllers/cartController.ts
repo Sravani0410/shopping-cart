@@ -14,7 +14,6 @@ export const getCart = async (req: Request, res: Response) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
-
 export const addItemToCart = async (req: Request, res: Response) => {
     try {
         const { productId, quantity } = req.body;
@@ -32,15 +31,33 @@ export const addItemToCart = async (req: Request, res: Response) => {
         if (existingItem) {
             existingItem.quantity += quantity;
         } else {
-            cart.items.push({ productId, quantity });
+            cart.items.push({
+                productId: new mongoose.Types.ObjectId(productId),
+                name: product.name,
+                price: product.price * quantity,
+                description: product.description,
+                quantity
+            } as ICartItem);
         }
 
         const savedCart = await cart.save();
-        res.status(201).json(savedCart);
+        res.status(201).json({
+            items: savedCart.items.map((item: ICartItem) => ({
+                id: item.productId,
+                name: item.name,
+                price: item.price,
+                description: item.description,
+                quantity: item.quantity
+            }))
+        });
     } catch (error) {
+        console.error('Error adding item to cart:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
+
+
+
 
 export const removeItemFromCart = async (req: Request, res: Response) => {
     try {
