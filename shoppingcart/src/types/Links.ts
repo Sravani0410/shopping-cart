@@ -4,4 +4,6 @@ export type Links = {
     price: number; // Optional price field
     description: string;
     image?: string; // Optional image field
+    filter: (callback: (item: any) => boolean) => any[];
+    quantity: number;
   };

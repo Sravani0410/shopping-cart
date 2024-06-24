@@ -9,11 +9,8 @@ export const DELETE: APIRoute = async ({ params }) => {
       method: "DELETE",
     });
 const response=await res.json()
-console.log("delteres==>",response)
+console.log("delteres==>",res,response)
 
-    // if (!res.ok) {
-    //   throw new Error("Error deleting link");
-    // }
 
     return new Response(JSON.stringify({ message: "Link deleted successfully", success: true }), {
       status: 200,
