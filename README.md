@@ -39,20 +39,17 @@ Frontend:
 Backend:
 
 1. Test the API's in Postman:
-         Product:
-                | METHODS  |                        API URL                                   |
-                | :------- |  --------------------------------------------------------------: | 
-                | GET      |  https://shopping-cart-backend-three.vercel.app/api/product      | 
-                | POST     |  https://shopping-cart-backend-three.vercel.app/api/product      | 
-                | PUT      |  https://shopping-cart-backend-three.vercel.app/api/product/id   | 
-                | DELETE   |  https://shopping-cart-backend-three.vercel.app/api/product/id   | 
-         Cart:
-                | METHODS  |                        API URL                               |
-                | :------- |  ----------------------------------------------------------: | 
-                | GET      |  https://shopping-cart-backend-three.vercel.app/api/cart     | 
-                | POST     |  https://shopping-cart-backend-three.vercel.app/api/cart     | 
-                | PUT      |  https://shopping-cart-backend-three.vercel.app/api/cart/id  | 
-                | DELETE   |  https://shopping-cart-backend-three.vercel.app/api/cart/id  | 
+
+| Methods | API URL                                                         |
+|---------|----------------------------------------------------------------|
+|  GET     | https://shopping-cart-backend-three.vercel.app/api/product      |
+|  POST    | https://shopping-cart-backend-three.vercel.app/api/product      |
+|  PUT     | https://shopping-cart-backend-three.vercel.app/api/product/{id} |
+| DELETE   | https://shopping-cart-backend-three.vercel.app/api/product/{id} |
+|  GET     | https://shopping-cart-backend-three.vercel.app/api/cart         |
+|  POST    | https://shopping-cart-backend-three.vercel.app/api/cart         |
+|  PUT     | https://shopping-cart-backend-three.vercel.app/api/cart/{id}    |
+| DELETE   | https://shopping-cart-backend-three.vercel.app/api/cart/{id}    |
   
 2. connect with Mongodb altas
 3. create the model,controller,routes,utils to manage the database
@@ -109,6 +106,6 @@ To run the project locally, follow these steps:
 **MongoDB Atlas:** To store the data in global cloud-based database service designed for developing modern applications.
 
 **Deployment:** 
-      vercel:  Backend
-      Netlify: Frontend
+   Backend :   vercel,
+   Frontend :  Netlify
 ---
