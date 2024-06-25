@@ -40,12 +40,19 @@ Backend:
 
 1. Test the API's in Postman:
 
+**Product API's**
+
 | Methods | API URL                                                         |
 |---------|----------------------------------------------------------------|
 |  GET     | https://shopping-cart-backend-three.vercel.app/api/product      |
 |  POST    | https://shopping-cart-backend-three.vercel.app/api/product      |
 |  PUT     | https://shopping-cart-backend-three.vercel.app/api/product/{id} |
 | DELETE   | https://shopping-cart-backend-three.vercel.app/api/product/{id} |
+
+**Cart API's**
+
+| Methods | API URL                                                         |
+|---------|----------------------------------------------------------------|
 |  GET     | https://shopping-cart-backend-three.vercel.app/api/cart         |
 |  POST    | https://shopping-cart-backend-three.vercel.app/api/cart         |
 |  PUT     | https://shopping-cart-backend-three.vercel.app/api/cart/{id}    |
