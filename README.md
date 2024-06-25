@@ -39,16 +39,21 @@ Frontend:
 Backend:
 
 1. Test the API's in Postman:
-     Product: 
-       GET: https://shopping-cart-backend-three.vercel.app/api/product
-       POST: https://shopping-cart-backend-three.vercel.app/api/product
-       PUT: https://shopping-cart-backend-three.vercel.app/api/produuct/id
-       Delete:https://shopping-cart-backend-three.vercel.app/api/product/id
-     Cart:
-       GET: https://shopping-cart-backend-three.vercel.app/api/cart
-       POST: https://shopping-cart-backend-three.vercel.app/api/cart
-       PUT: https://shopping-cart-backend-three.vercel.app/api/cart/id
-       Delete: https://shopping-cart-backend-three.vercel.app/api/cart/id
+         Product:
+                | METHODS  |                        API URL                                   |
+                | :------- |  --------------------------------------------------------------: | 
+                | GET      |  https://shopping-cart-backend-three.vercel.app/api/product      | 
+                | POST     |  https://shopping-cart-backend-three.vercel.app/api/product      | 
+                | PUT      |  https://shopping-cart-backend-three.vercel.app/api/product/id   | 
+                | DELETE   |  https://shopping-cart-backend-three.vercel.app/api/product/id   | 
+         Cart:
+                | METHODS  |                        API URL                               |
+                | :------- |  ----------------------------------------------------------: | 
+                | GET      |  https://shopping-cart-backend-three.vercel.app/api/cart     | 
+                | POST     |  https://shopping-cart-backend-three.vercel.app/api/cart     | 
+                | PUT      |  https://shopping-cart-backend-three.vercel.app/api/cart/id  | 
+                | DELETE   |  https://shopping-cart-backend-three.vercel.app/api/cart/id  | 
+  
 2. connect with Mongodb altas
 3. create the model,controller,routes,utils to manage the database
 
@@ -82,13 +87,13 @@ To run the project locally, follow these steps:
 
 ## Usage
 
-![Home Page](homeimg.png)
+![Home Page](screenshots/homeimg.png)
 
-![Add Product Page](addimg.png)
+![Add Product Page](screenshots/addimg.png)
 
-![Edit Product Page](editimg.png)
+![Edit Product Page](screenshots/editimg.png)
 
-![Cart Items Page](cartimg.png)
+![Cart Items Page](screenshots/cartimg.png)
 
 
 ## Technology Stack
@@ -106,6 +111,4 @@ To run the project locally, follow these steps:
 **Deployment:** 
       vercel:  Backend
       Netlify: Frontend
-
-
 ---
