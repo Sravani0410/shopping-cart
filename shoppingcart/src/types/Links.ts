@@ -7,4 +7,5 @@ export type Links = {
     filter: (callback: (item: any) => boolean) => any[];
     quantity: number;
     id:string;
+    productId:string;
   };
