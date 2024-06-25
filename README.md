@@ -99,6 +99,8 @@ To run the project locally, follow these steps:
 
 **Tailwind CSS:** A utility-first CSS framework for rapidly building custom designs.
 
+**Backend:** Node,Express
+
 **MongoDB Atlas:** To store the data in global cloud-based database service designed for developing modern applications.
 
 **vercel:** To Deploy both Frontend and Backend
