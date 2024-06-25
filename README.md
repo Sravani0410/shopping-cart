@@ -1,7 +1,7 @@
 # Ecommerce App:
 
 ## Introduction
-This project is a part of the Ecommerce App. The objective is to develop a web application based on the Ecommerce using Astro.js and Tailwind CSS with Typescript. The project includes the implementation of various components such as Product Management and Shopping Cart.
+This project is a part of the Ecommerce App. The objective is to develop a web application based on the e-commerce using Astro.js and Tailwind CSS with Typescript. The project includes the implementation of various components such as Product Management and Shopping Cart Using Backend APIs.
 
 ## Requirements:
   Product Management:
