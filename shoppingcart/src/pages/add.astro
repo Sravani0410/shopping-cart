@@ -49,19 +49,20 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
         throw new Error(`HTTP error! status: ${res.status}`);
       }
       const responseJson = await res.json();
-      const { success, message } = responseJson; 
-      console.log("responseJson", responseJson);
+      // const { success, message } = responseJson; 
+      // console.log("responseJson", responseJson);
 
-      if (success) {
-        console.log("======message=========", message);
-        addForm.reset();
-        console.log("Form Reset");
-        // return Astro.redirect("/");
-      } else {
-        console.log("Resetting Form in Else");
-        throw new Error(message);
-      }
+      // if (success) {
+      //   // console.log("======message=========", message);
+      //   addForm.reset();
+      //   // console.log("Form Reset");
+      //   window.location.href = "/";
+      // } else {
+      //   console.log("Resetting Form in Else");
+      //   throw new Error(message);
+      // }
       // addForm.reset();
+      window.location.href = "/";
     } catch (err) {
       console.error(err);
     }

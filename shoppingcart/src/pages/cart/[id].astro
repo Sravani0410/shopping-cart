@@ -1,9 +1,12 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import type { Links } from "@/types/Links";
+import React from 'react';
+
+import ButtonHTMLAttributes  from 'react';
 
 const { id } = Astro.params;
-let data = [];
+let data: Links[] = [];
 try {
   const req = await fetch(`https://shopping-cart-backend-three.vercel.app/api/cart`);
   if (!req.ok) {
@@ -57,6 +60,7 @@ try {
               </td>
               <td class="px-6 py-4">
                 <button>Remove</button>
+                {/* <button onclick={(e: React.MouseEvent<HTMLButtonElement>) => removeFromCart(link.id)}>Remove</button> */}
               </td>
             </tr>
           ))}
@@ -75,3 +79,21 @@ try {
   )}
 </BaseLayout> 
 
+<script>
+//    async function removeFromCart(productId: string) {
+//   try {
+//     const res = await fetch(`https://shopping-cart-backend-three.vercel.app/api/cart/${productId}`, {
+//       method: "DELETE",
+//     });
+//     if (!res.ok) {
+//       throw new Error(`Failed to remove product from cart. Status: ${res.status}`);
+//     }
+//     // Refresh the cart data after removing the product
+//     const newData = data.filter((item: Links) => item.id !== productId);
+//     setData(newData);
+//   } catch (error) {
+//     console.error(`Failed to remove product from cart: ${error}`);
+//   }
+// };
+
+</script>

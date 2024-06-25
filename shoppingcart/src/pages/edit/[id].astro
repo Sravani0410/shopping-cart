@@ -9,13 +9,10 @@ if (!req.ok) {
   throw new Error("Failed to fetch link data");
 }
 const { data }: { data: Links[] } = await req.json();
-// console.log("data111======>", data);
 const editedData = data.find((item) => item._id === id);
 if (!editedData) {
   throw new Error(`Link with id ${id} not found`);
 }
-// console.log("data111======>", editedData);
-// editedData.description = editedData.description.replace(/(?:\r\n|\r|\n)/g, '\n');
 ---
 <BaseLayout>
   <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 items-center">
@@ -61,12 +58,12 @@ if (!editedData) {
           },
           body: JSON.stringify(values),
         });
-        console.log("res", res);
+        // console.log("res", res);
         if (!res.ok) {
           throw new Error(`HTTP error! status: ${res.status}`);
         }
         const responseJson = await res.json();
-        console.log("responseJson", responseJson);
+        // console.log("responseJson", responseJson);
         window.location.href = "/";
       } catch (err) {
         console.error(err);

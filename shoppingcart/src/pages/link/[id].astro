@@ -7,7 +7,6 @@ if (!id) {
   return Astro.redirect("/");
 }
 
-// Fetch link details from the real API
 const req = await fetch(`https://shopping-cart-backend-three.vercel.app/api/products/${id}`);
 if (!req.ok) {
   return Astro.redirect("/");
@@ -22,11 +21,6 @@ if (!data) {
     <button type="submit" class="bg-red-400 text-white py-2 px-6" id="delete">Delete Link</button>
     <a class="bg-teal-500 text-white py-2 px-6" href={`/edit/${data._id}`}>Edit Link</a>
   </div>
-  <ul>
-    <!-- <li>{data.title}</li> -->
-    <!-- <li>{data.description}</li> -->
-    <!-- <li><a href={data.url}>View Link</a></li> -->
-  </ul>
   <script define:vars={{
     id: data.id,
   }}>

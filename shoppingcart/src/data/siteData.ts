@@ -1,4 +1,4 @@
 export const metaData={
-    title:"Dev Links",
-    description:"Save links you find on the web for web developer"
+    title:"Shopping-Cart",
+    description:"Product Management and Shopping-Cart you find on the web for web developer"
 }
