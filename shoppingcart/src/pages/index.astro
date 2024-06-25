@@ -32,11 +32,11 @@ const data = await fetchLinks();
       {
         data && (
           <div class="md:col-span-1 md:flex md:flex-col md:overflow-auto items-center justify-center">
-            <ul class="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-4 flex-grow">
+            <ul class="grid grid-cols-1 gap-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:gap-6 flex-grow">
               {data.map((link: Links) => (
                 <li class="flex flex-col items-center bg-gray-100 border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-white dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">        
                   <img class="object-cover w-full bg-gray-100 border-gray-200 hover:bg-white rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/image.jpg" alt="dummy-image" />
-                  <div class="p-2 items-center">
+                  <div class="p-2 flex flex-col justify-between items-center">
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {link.name}
                   </h5>
