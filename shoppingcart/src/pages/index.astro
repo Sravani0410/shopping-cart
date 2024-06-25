@@ -25,11 +25,11 @@ const fetchLinks = async () => {
 const data = await fetchLinks();
 ---
 <BaseLayout >
-  <div class="flex h-screen">
-    <div class="w-50%">
+  <div class="p-2 bg-white border border-gray-200 rounded-lg shadow  dark:bg-gray-800 dark:border-gray-700">
+    <div class="">
       {data && (
         <div class="md:col-span-1 md:flex md:flex-col md:overflow-auto items-center justify-center">
-          <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8 overflow-auto flex-grow">
+          <ul class="grid  grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-8 flex-grow">
             {data.map((link: Links) => (
               <li class="group bg-white p-2 rounded-lg shadow border border-gray-200 dark:bg-gray-800 dark:border-gray-700 mx-auto">
                 <h3 class="mt-4 text-sm text-gray-700">Product :{link.name}</h3>

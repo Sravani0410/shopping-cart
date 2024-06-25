@@ -12,15 +12,16 @@ const {title=metaData.title,description=metaData.description}=Astro.props;
     <meta name="description" content={description} />
     <title>{title}</title>
   </head>
-  <body class="grid">
-    <header>
-      <nav class="container flex justify-between items-center py-1">
+  <body class="">
+    <header class="border-gray-200 text-white bg-gray-800 dark:bg-gray-800 dark:border-gray-700">
+      <nav class="container flex justify-between items-center py-2">
         <a class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="/">Go Home</a>
+        <h1 class="font-bold">{title}</h1>
         <a class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" href="add">Add Product</a>
       </nav>
     </header>
 
-    <main class="flex items-center justify-center h-screen top-0">
+    <main class="">
       <slot/>
     </main>
   </body>

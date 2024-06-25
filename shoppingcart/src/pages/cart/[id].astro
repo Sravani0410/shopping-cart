@@ -18,61 +18,64 @@ try {
 ---
 
 <BaseLayout>
-  {data?.length > 0 ? (
-    <div class="relative overflow-x-auto">
-      <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
-          <tr>
-            <th scope="col" class="px-6 py-3 rounded-s-lg">
-              Product name
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Qty
-            </th>
-            <th scope="col" class="px-6 py-3">
-              Description
-            </th>
-            <th scope="col" class="px-6 py-3 rounded-e-lg">
-              Price
-            </th>
-            <th scope="col" class="px-6 py-3 rounded-e-lg">
-              Delete
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((link: Links) => (
-            <tr id={`row-${link.productId}`} class="bg-white dark:bg-gray-800">
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                {link.name}
+  <div class="flex items-center justify-center h-screen top-0 ">
+    {data?.length > 0 ? (
+      <div class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+              <th scope="col" class="px-6 py-3 rounded-s-lg">
+                Product name
               </th>
-              <td class="px-6 py-4">
-                {link.quantity}
-              </td>
-              <td class="px-6 py-4">
-                {link.description}
-              </td>
-              <td class="px-6 py-4">
-                {link.price}
-              </td>
-              <td class="px-6 py-4">
-                <button onclick={`removeFromCart('${link.productId}')`}>Remove</button>
-              </td>
+              <th scope="col" class="px-6 py-3">
+                Qty
+              </th>
+              <th scope="col" class="px-6 py-3">
+                Description
+              </th>
+              <th scope="col" class="px-6 py-3 rounded-e-lg">
+                Price
+              </th>
+              <th scope="col" class="px-6 py-3 rounded-e-lg">
+                Delete
+              </th>
             </tr>
-          ))}
-        </tbody>
-        <tfoot>
-          <tr class="font-semibold text-gray-900 dark:text-white">
-            <th scope="row" class="px-6 py-3 text-base">Total</th>
-            <td class="px-6 py-6">{data.reduce((acc:any, curr:any) => acc + curr.quantity, 0)}</td>
-            <td class="px-6 py-6">{data.reduce((acc:any, curr:any) => acc + (curr.price * curr.quantity), 0).toFixed(2)}</td>
-          </tr>
-        </tfoot>
-      </table>
-    </div>
-  ) : (
-    <p>No data found</p>
-  )}
+          </thead>
+          <tbody>
+            {data.map((link: Links) => (
+              <tr id={`row-${link.productId}`} class="bg-white dark:bg-gray-800">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {link.name}
+                </th>
+                <td class="px-6 py-4">
+                  {link.quantity}
+                </td>
+                <td class="px-6 py-4">
+                  {link.description}
+                </td>
+                <td class="px-6 py-4">
+                  {link.price}
+                </td>
+                <td class="px-6 py-4">
+                  <button onclick={`removeFromCart('${link.productId}')`}>Remove</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr class="font-semibold text-gray-900 dark:text-white">
+              <th scope="row" class="px-6 py-3 text-base">Total</th>
+              <td class="px-6 py-6">{data.reduce((acc:any, curr:any) => acc + curr.quantity, 0)}</td>
+              <td class="px-6 py-6">{data.reduce((acc:any, curr:any) => acc + (curr.price * curr.quantity), 0).toFixed(2)}</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    ) : (
+      <p>No data found</p>
+    )}
+  </div>
+ 
 </BaseLayout> 
 
 <script>
