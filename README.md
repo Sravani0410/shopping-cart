@@ -30,14 +30,18 @@ Backend: [Live Demo](https://shopping-cart-backend-three.vercel.app/)
 **Responsive Layout:** The layout is optimized for both mobile and desktop views, ensuring a seamless user experience across devices.
 
 **Feature Implementation:** 
-Frontend:
-1.  Product Management:
-    The project a Navbar consists on Go Home, Add Product.product is showing.When we Click on Add Product it open form to fill name,price,description and submit the product after it will redirect to home page there all the product we can see.If we want to edit any product so click on edit it will open the edit form so after editing submit the form then it will successfully edited.if we want delete any product we can delete.
-2.  Shopping cart:
-     After click on add to cart button any product. it will redirect to cart page. there we can view items in the cart including with quantity. If we want remove any cart item. there is option to remove.
+
+1. Product Management:
+   - The application features a responsive and visually appealing Navbar with options to go to the home page and add a product. The product list is displayed on the home page. 
+   - When the user clicks on "Add Product", a form is displayed to fill in the product details (name, price, description). After submitting the form, the product is successfully added and the user is redirected back to the home page. The updated product list is displayed.
+   - If the user wants to edit a product, they can click on the "Edit" button. The edit form is displayed, allowing the user to modify the product details. After submitting the form, the product is successfully updated. The user is redirected back to the home page, and the updated product list is displayed.
+   - To delete a product, the user can click on the "Delete" button. The product is deleted from the database using a backend API.
+
+2. Shopping Cart:
+   - After clicking the "Add to Cart" button for a product, the user is redirected to the shopping cart page. The items in the cart, including the quantity, are displayed.
+   - To remove an item from the cart, the user can click on the "Remove" button. The item is removed from the cart in the database using a backend API.
 
 Backend:
-
 1. Test the API's in Postman:
 
 **Product API's**
@@ -91,13 +95,13 @@ To run the project locally, follow these steps:
 
 ## Usage
 
-![Home Page](screenshots/homeimg.png)
+![Home Page](screenshots/homeimage.png)
 
-![Add Product Page](screenshots/addimg.png)
+![Add Product Page](screenshots/addimage.png)
 
-![Edit Product Page](screenshots/editimg.png)
+![Edit Product Page](screenshots/editimage.png)
 
-![Cart Items Page](screenshots/cartimg.png)
+![Cart Items Page](screenshots/cartimage.png)
 
 
 ## Technology Stack
